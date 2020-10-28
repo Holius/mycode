@@ -33,7 +33,7 @@ def main(month, day, endpoint, headers, query):
         return
     month_holiday = {}
     for x in results:
-        if x["month"] == month: month_holiday = x
+        if x.get("month") == month: month_holiday = x
         if x["month"] == month and x["day"] == day:
             print(f"Your holiday is {x.get('name')}.")
             return
