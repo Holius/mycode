@@ -17,7 +17,7 @@ year = "2020"
 month = convert_month(input("Enter 3 Letter Birth Month like jan for january: ")) 
 day = check_day(input("Enter your day of birth like 1 for the first of the month: "))
 headers = {"Authorization": api_key}
-query= {"year": year} 
+query= {"year": year } 
 endpoint = f"{base_url}"
 
 #free version of this API is terrible
