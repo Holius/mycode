@@ -1,0 +1,18 @@
+# hour = int(input("Starting time (hours): "))
+# mins = int(input("Starting time (minutes): "))
+# dura = int(input("Event duration (minutes): "))
+hour = 23
+mins = 58
+dura = 642
+
+# calculate total number of minutes --> modulo to find amount of end minutes
+endMin = (dura + mins) % 60
+
+# convert minutes passing to hours passing
+## int() will (1) round answer to integer and (2) handle the edge case of less than zero-hours-passsing by returning 0 
+hours2pass = int((dura + mins)/60)
+
+#calculate total number of hours --> module to find amount of end hours
+endHour = (hour + hours2pass) % 24 
+
+print(str(endHour) + ":" + str(endMin))
