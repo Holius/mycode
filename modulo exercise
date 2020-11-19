@@ -7,12 +7,17 @@ dura = 642
 
 # calculate total number of minutes --> modulo to find amount of end minutes
 endMin = (dura + mins) % 60
+# if (dura + mins) is less than 60, then the operation resolves to (dura + mins)
+# else if (dura + mins) is more than 60 (and not a multiple of 60), then the operation resolves to whatever remains after all multiples of 60 are removed.
+# else (dura + mins) is a multiple of 60 and 0 is returned
 
 # convert minutes passing to hours passing
 ## int() will (1) round answer to integer and (2) handle the edge case of less than zero-hours-passsing by returning 0 
 hours2pass = int((dura + mins)/60)
 
-#calculate total number of hours --> module to find amount of end hours
+#calculate total number of hours --> modulo to find amount of end hours
 endHour = (hour + hours2pass) % 24 
+#the logic is the same as line 9 (endMin) because all multiples of 24 hours (if any exist) are removed to only show the hour the event will occur (just like removing multiples
+# of 60 minutes to get the minutes)
 
 print(str(endHour) + ":" + str(endMin))
